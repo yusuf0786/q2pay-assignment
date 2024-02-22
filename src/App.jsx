@@ -6,7 +6,7 @@ function App() {
 
   const [amount, setAmount] = useState('');
   const [fromCurrency, setFromCurrency] = useState('USD');
-  const [toCurrency, setToCurrency] = useState('EUR');
+  const [toCurrency, setToCurrency] = useState('DJF');
   const [result, setResult] = useState('');
   const amountToConvert = useRef('')
   const amountFromCountry = useRef('')
@@ -60,7 +60,7 @@ function App() {
             <label htmlFor="from">From</label>
             <select id='from' value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}>
               {supportedCodes.map((code, index)=> (
-                <option key={index+1} value={code[0]}>{code[0]}</option>
+                <option key={index+1} value={code[0]}>{code[0].toLowerCase()}</option>
               ))}
             </select>
           </div>
@@ -71,7 +71,7 @@ function App() {
             <label htmlFor="to">To</label>
             <select id='to' value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
               {supportedCodes.map((code, index)=> (
-                <option key={index+1} value={code[0]}>{code[0]}</option>
+                <option key={index+1} value={code[0]}>{code[0].toLowerCase()}</option>
               ))}
             </select>
           </div>
@@ -79,7 +79,7 @@ function App() {
         <button type="submit">Convert</button>
       </form>
       <p className='converted-amount'><b>Converted Amount</b></p>
-      {result && <p className='result-amount'>{amountToConvert.current} {amountFromCountry.current} = {result} {amountToCountry.current}</p>}
+      {result && <p className='result-amount'>{amountToConvert.current} {amountFromCountry.current.toLowerCase()} = {result} {amountToCountry.current.toLowerCase()}</p>}
     </div>
   )
 }

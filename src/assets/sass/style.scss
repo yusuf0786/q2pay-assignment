@@ -90,6 +90,7 @@ body {
             &:focus-visible {
                 border: 1px solid #9f9f9f;
                 outline: 0;
+                color: #000;
             }
         }
         .form-grp input {
@@ -111,6 +112,9 @@ body {
             background-repeat: no-repeat;
             background-position-x: 100%;
             background-position-y: 5px;
+            color: #9f9f9f;
+
+            // text-transform: lowercase;
 
             @media only screen and (max-width:768px) {
                 width: 100%;
