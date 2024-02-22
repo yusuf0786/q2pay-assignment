@@ -79,7 +79,14 @@ body {
         .form-grp select {
             padding: 0.5rem;
             font-size: 1rem;
-            border: 1px solid #9f9f9f;
+            border-radius: 2px;
+            border: 1px solid #dfdfdf;
+
+            &:focus,
+            &:focus-visible {
+                border: 1px solid #9f9f9f;
+                outline: 0;
+            }
         }
         .form-grp input {
             max-width: 350px;
@@ -87,6 +94,14 @@ body {
         }
         .form-grp select {
             padding-right: 3rem;
+            
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='rgba(0,0,0,0.5)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-position-y: 5px;
         }
         .form-grp .swap-btn {
             border-radius: 100%;
